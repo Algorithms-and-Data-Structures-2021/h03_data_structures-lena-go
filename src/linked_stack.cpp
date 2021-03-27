@@ -18,6 +18,11 @@ void LinkedStack::Pop() {
   }
 
   // TODO: напишите здесь свой код ...
+
+  auto del_elem = top_;
+  top_ = top_->next;
+  delete del_elem;
+  size_--;
 }
 
 void LinkedStack::Clear() {
