@@ -71,6 +71,14 @@ void LinkedDequeue::DequeueBack() {
 
 void LinkedDequeue::Clear() {
   // TODO: напишите здесь свой код ...
+  for (DoublyNode *current_node = front_; current_node != nullptr;){
+      auto del_node = current_node;
+      current_node = current_node->previous;
+      delete del_node;
+  }
+  size_ = 0;
+  front_ = nullptr;
+  back_ = nullptr;
 }
 
 // === РЕАЛИЗОВАНО ===
