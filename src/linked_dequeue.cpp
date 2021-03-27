@@ -37,6 +37,17 @@ void LinkedDequeue::Dequeue() {
   }
 
   // TODO: напишите здесь свой код ...
+  if (!(front_->previous)){
+      delete front_;
+      front_ = nullptr;
+      back_ = nullptr;
+  }
+  else{
+      auto new_front = front_->previous;
+      delete front_;
+      front_ = new_front;
+  }
+  size_--;
 }
 
 void LinkedDequeue::DequeueBack() {
