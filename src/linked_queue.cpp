@@ -6,6 +6,11 @@ namespace itis {
 
 void LinkedQueue::Enqueue(Element e) {
   // TODO: напишите здесь свой код ...
+  auto new_node = new SinglyNode(e, nullptr);
+  new_node->next = back_;
+  back_ = new_node;
+  if (back_->next == nullptr) front_ = new_node;
+  size_++;
 }
 
 void LinkedQueue::Dequeue() {
