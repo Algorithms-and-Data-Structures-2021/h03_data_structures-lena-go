@@ -6,6 +6,16 @@ namespace itis {
 
 void LinkedDequeue::Enqueue(Element e) {
   // TODO: напишите здесь свой код ...
+  auto *new_elem = new DoublyNode(e, nullptr, nullptr);
+  if (size_ == 0) {
+      front_ = new_elem;
+  }
+  else {
+      back_->previous = new_elem;
+      new_elem->next = back_;
+  }
+  back_ = new_elem;
+  size_++;
 }
 
 void LinkedDequeue::EnqueueFront(Element e) {
