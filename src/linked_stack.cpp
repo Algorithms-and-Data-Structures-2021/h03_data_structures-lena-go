@@ -6,6 +6,10 @@ namespace itis {
 
 void LinkedStack::Push(Element e) {
   // TODO: напишите здесь свой код ...
+
+  auto new_elem = new SinglyNode(e, top_);
+  top_ = new_elem;
+  size_++;
 }
 
 void LinkedStack::Pop() {
