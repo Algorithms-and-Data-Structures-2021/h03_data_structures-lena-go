@@ -19,6 +19,11 @@ ArrayStack::ArrayStack(int capacity) {
 
 ArrayStack::~ArrayStack() {
   // TODO: напишите здесь свой код ...
+
+  delete[] data_;
+  data_ = nullptr;
+  size_ = 0;
+  capacity_ = 0;
 }
 
 void ArrayStack::Push(Element e) {
