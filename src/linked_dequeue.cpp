@@ -20,6 +20,15 @@ void LinkedDequeue::Enqueue(Element e) {
 
 void LinkedDequeue::EnqueueFront(Element e) {
   // TODO: напишите здесь свой код ...
+  if (size_ == 0){
+      Enqueue(e);
+  }
+  else{
+      auto new_elem = new DoublyNode(e, front_, nullptr);
+      front_->next = new_elem;
+      front_ = new_elem;
+      size_++;
+  }
 }
 
 void LinkedDequeue::Dequeue() {
