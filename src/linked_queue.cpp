@@ -39,6 +39,16 @@ void LinkedQueue::Dequeue() {
 
 void LinkedQueue::Clear() {
   // TODO: напишите здесь свой код ...
+
+  for (auto current_node = back_; current_node != nullptr;) {
+      auto del_node = current_node;
+      current_node = current_node->next;
+      delete del_node;
+  }
+
+  size_ = 0;
+  front_ = nullptr;
+  back_ = nullptr;
 }
 
 // === РЕАЛИЗОВАНО ===
