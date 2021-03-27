@@ -27,6 +27,14 @@ void LinkedStack::Pop() {
 
 void LinkedStack::Clear() {
   // TODO: напишите здесь свой код ...
+
+  for (auto current_node = top_; current_node != nullptr;) {
+      auto del_elem = current_node;
+      current_node = current_node->next;
+      delete del_elem;
+  }
+  top_ = nullptr;
+  size_ = 0;
 }
 
 // === РЕАЛИЗОВАНО ===
