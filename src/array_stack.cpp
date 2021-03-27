@@ -41,6 +41,9 @@ void ArrayStack::Pop() {
   }
 
   // TODO: напишите здесь свой код ...
+
+  data_[size_ - 1] = Element::UNDEFINED;
+  size_--;
 }
 
 void ArrayStack::Clear() {
