@@ -56,16 +56,16 @@ void LinkedDequeue::DequeueBack() {
   }
 
   // TODO: напишите здесь свой код ...
-  if (!back_->next){
-      delete back_;
-      back_ = nullptr;
+  DoublyNode *del_node = back_;
+  back_ = back_->next;
+
+  if (back_ == nullptr){
       front_ = nullptr;
+  } else {
+      back_->previous = nullptr;
   }
-  else{
-      auto new_back = back_->next;
-      delete back_;
-      back_ = new_back;
-  }
+
+  delete del_node;
   size_--;
 }
 
