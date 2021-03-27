@@ -12,6 +12,9 @@ ArrayStack::ArrayStack(int capacity) {
   }
 
   // TODO: напишите здесь свой код ...
+  capacity_ = capacity;
+  data_ = new Element[capacity_];
+  std::fill(data_, data_ + capacity_, Element::UNDEFINED);
 }
 
 ArrayStack::~ArrayStack() {
