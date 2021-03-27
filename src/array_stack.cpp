@@ -28,6 +28,11 @@ ArrayStack::~ArrayStack() {
 
 void ArrayStack::Push(Element e) {
   // TODO: напишите здесь свой код ...
+  if (size_ == capacity_) {
+      resize(size_ + kCapacityGrowthCoefficient);
+  }
+  data_[size_] = e;
+  size_++;
 }
 
 void ArrayStack::Pop() {
@@ -46,6 +51,13 @@ void ArrayStack::resize(int new_capacity) {
   assert(new_capacity > size_);
 
   // TODO: напишите здесь свой код ...
+
+  auto *new_data = new Element[new_capacity];
+  std::copy(data_, data_ + size_, new_data);
+  std::fill(new_data + size_, new_data + new_capacity, Element::UNDEFINED);
+  delete[] data_;
+  data_ = new_data;
+  capacity_ = new_capacity;
 }
 
 // === РЕАЛИЗОВАНО ===
