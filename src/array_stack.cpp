@@ -48,6 +48,9 @@ void ArrayStack::Pop() {
 
 void ArrayStack::Clear() {
   // TODO: напишите здесь свой код ...
+
+  std::fill(data_, data_ + size_, Element::UNDEFINED);
+  size_ = 0;
 }
 
 void ArrayStack::resize(int new_capacity) {
